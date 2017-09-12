@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../static/style-ss.css">
+<title>Silk St. Market</title>
+</head>
+
+<body>
+<center>
+<a href=/>Home</a> | <a href=/ss>Silk St.</a> | <a href=/cart-ss>Cart</a><p>
+<span class=xl>
+</span>
+<img src=../static/top-ss.png style=height:80px>
+<br>
+Vendor: {{ outpt.id }}<br>
+Reputation: {{ outpt.rank }}<br>
+<img src='../static/avatar-ss.jpg' style="height:100px;">
+<br>
+{{ outpt.desc }}
+<p>
+<form action=vendor-ss>
+<input type=hidden name=vendor value={{ outpt.id }}>
+<input type=submit name=sort value="Sort comments">
+</form>
+<p>
+<table>
+{% for c in outpt.comments %}
+    <tr><td>
+    Rank: {{ c[0] }}<br>
+    {{ c[1]|safe }}</td></tr>
+{% endfor %}    
+</table>
+<p>
+
+<form action=vendor-ss>
+<fieldset>
+Username: <input type=text name=user size=4><br>
+Rank this vendor:
+<select name=rank>
+    <option value=5>5</option>
+    <option value=4>4</option>
+    <option value=3>3</option>
+    <option value=2>2</option>
+    <option value=1>1</option>
+    <option value=0>0</option>
+</select>
+<br>
+<textarea name=comment cols=36>
+</textarea>
+<input type=hidden name=vendor value={{ outpt.id }}>
+<br>
+<input type=submit value=Comment>
+</fieldset>
+</form>
+</body>
+</html>
+

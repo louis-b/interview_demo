@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../static/style.css">
+<title>{{ title }}</title>
+</head>
+
+<body>
+<center>
+</span>
+{% if mascot %}
+    <a href="/"><img src="/static/mascot.png" alt="" style="height:150px;"></a>
+{% endif %}
+</center>
+<p>
+
+<a href=/1>Calendar:</a> a colourised calendar 
+suitable for one person or a small organisation.
+<br>
+<a href=/ss>Silk St. Marketplace:</a> a basic, online marketplace.
+<br>
+<br>
+
+<p>
+<br>
+<br>
+<br>
+<br>
+
+<center>
+</center>
+</body>
+</html>
+

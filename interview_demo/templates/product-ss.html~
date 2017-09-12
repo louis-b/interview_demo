@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../static/style-ss.css">
+<title>Silk St. Market</title>
+</head>
+
+<body>
+<center>
+<a href=/>Home</a> | <a href=/ss>Silk St.</a> | <a href=/cart-ss>Cart</a><p>
+<span class=xl>
+</span>
+<img src=../static/top-ss.png style=height:80px>
+<br>
+<img src='../static/box-ss.jpg' style="height:100px;">
+<table>
+<tr>
+    <td>Product: </td>
+    <td>Widget-{{ id1 }}</td>
+</tr><tr>    
+    <td>Description: </td><td>{{ cart.w[id1].desc }}</td>
+</tr><tr>
+    <td>Vendor: </td>
+    <td><a href=/vendor-ss?vendor={{ widgets.a[id1].vendor }}>
+    {{ widgets.a[id1].vendor }}</a></td>
+</tr><tr>
+    <td>Price: </td><td>${{ widgets.a[id1].price }}</td>
+</tr>
+</table>
+
+<form action=product-ss>
+  <select name=amount>
+    <option value=1>1</option>
+    <option value=2>2</option>
+    <option value=3>3</option>
+    <option value=4>4</option>
+  </select>
+  <input type=hidden name=id value={{ id1 }}>
+  <input type=hidden name=status value=1>
+  <input type=submit value="Add to cart">
+</form> 
+<br>
+{{ msg }}<br>
+<a href=/cart-ss>Cart</a> contains {{ widgets.cart_size }} items<br>
+</body>
+</html>
+

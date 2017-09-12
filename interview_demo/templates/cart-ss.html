@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../static/style-ss.css">
+<title>Silk St. Market</title>
+</head>
+
+<body>
+<center>
+<a href=/>Home</a> | <a href=/ss>Silk St.</a> | <a href=/cart-ss>Cart</a><p>
+<span class=xl>
+</span>
+<img src=../static/top-ss.png style=height:80px>
+<br>
+<img src='../static/cart-ss.png' style="height:100px;">
+<br>
+
+Cart contains {{ cart.cart_size }} items<br>
+<table>
+    {% for k in cart.cart %}
+    <tr>
+    <td>Item</td><td>Widget-{{ k }} 
+    <a href=?delete={{ k }}>
+    <img src='../static/delete.png' class=delete></a>
+    </td>
+    <td></td></tr><tr>
+    <td>Description: </td><td>{{ cart.w[k].desc }}</td>
+    
+    <td></td></tr><tr>
+    <td>Number:</td><td>{{ cart.w[k].amount }}</td>
+    <td></td></tr><tr>
+    <td>Cost: </td></td></td><td>{{ cart.w[k].price }}</td>
+    </tr><tr>
+    <td>Subtotal: </td><td></td><td>{{ cart.w[k].subtotal }}</td>
+    </tr><tr>
+    <th>   </th>
+    </tr>
+    {% endfor %}
+        
+    <td>Total:</td><td></td><td>{{ cart.total }}</td>
+</table>
+<p>
+</body>
+</html>
+

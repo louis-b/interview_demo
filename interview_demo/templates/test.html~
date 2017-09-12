@@ -1,0 +1,9 @@
+{% for widget in widgets %}
+    Product: <a href=/product-ss?id={{ widget.name }}>{{ widget.name }}</a><br>
+    Origin: {{ widget.origin }}<br>
+    Vendor:
+    <a href=/vendor-ss?vendor={{ widget.vendor }}>{{ widget.vendor }}</a> 
+    <br>
+    <br>
+    {{ loop.index }}
+{% endfor %}    

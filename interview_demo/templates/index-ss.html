@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../static/style-ss.css">
+<title>Silk St. Market</title>
+</head>
+
+<body>
+<center>
+<a href=/>Home</a> | <a href=/ss>Silk St.</a> | <a href=/cart-ss>Cart</a><p>
+<span class=xl>
+</span>
+<p>
+<img src=../static/top-ss.png style=height:80px>
+<br>
+{% set tmp = 'xxx' %}
+<table>
+<tr>
+{% for i in range(cart.w|length) %} 
+    <td class={{ tmp }}>
+    <img src='../static/box-ss.jpg' style="height:50px;">
+    <br>
+    Product: <a href=/product-ss?id={{ i }}>Widget-{{ i }}</a><br>
+    Origin: {{ cart.w[i].origin }}<br>
+    Vendor:
+    <a href=/vendor-ss?vendor={{ cart.w[i].vendor }}>{{ cart.w[i].vendor }}</a> 
+    <br>
+    </td>
+    {% if i % 4 == 3 %}
+        </tr><tr>
+        {% if tmp == 'red' %}
+            {% set tmp = 'xxx' %}
+        {% else %}
+            {% set tmp = 'xxx' %}
+        {% endif %}    
+    {% endif %}   
+    <p>
+{% endfor %}
+</tr>
+</table>
+<br>
+<a href=/cart-ss>Cart</a> contains {{ cart.cart_size }} items<br>
+<p>
+<br>
+</body>
+</html>
+
